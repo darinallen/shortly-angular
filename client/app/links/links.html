@@ -1,8 +1,11 @@
 <div id="container">
-  <h1>Links</h1>
   <div ng-controller="LinksController">
-    <ul>
-      <li class="link" ng-repeat="link in $scope.data.links track by $index">
-    </ul>
+    <div class="link" ng-repeat="link in data.links track by $index">
+      <a ng-href="{{ link.baseUrl }}/{{ link.code }}" target="_blank"><img src="../assets/redirect_icon.png"></a>
+      <p class="title">{{ link.title }}</p>
+      <p>{{ link.url }}</p>
+      <p>{{ link.baseUrl }}/{{ link.code }}</p>
+      <span class="visits">{{ link.visits }}Visits</span>
+    </div>
   </div>
 </div>
