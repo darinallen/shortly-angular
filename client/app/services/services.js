@@ -1,12 +1,11 @@
 angular.module('shortly.services', [])
 
 .factory('Links', function ($http) {
-
-  var getAll = function(links) {
+  // this was fun!
+  var getAll = function() {
     return $http({
       method: 'GET',
       url: '/api/links',
-      data: links
     }).then(function(resp) {
       return resp.data;
     });
@@ -20,12 +19,12 @@ angular.module('shortly.services', [])
     }).then(function(resp) {
       return resp;
     });
-  }
+  };
 
   return {
     getAll: getAll,
     addOne: addOne
-  }
+  };
 
 })
 
